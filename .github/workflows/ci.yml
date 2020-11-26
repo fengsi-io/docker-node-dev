@@ -7,9 +7,6 @@ on:
       - master
     tags:
       - "v*"
-    paths:
-      - "Dockerfile**"
-      - ".github/workflows/ci.yml"
 
 jobs:
   docker-build-push:
