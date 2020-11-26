@@ -9,6 +9,9 @@ on:
       - "v*"
     path:
       - "Dockerfile*"
+      - ".github/workflows/ci.yml"
+  schedule:
+    - cron:  '0 0 1 * *'
 
 jobs:
   docker-build-push:
@@ -16,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        node: [lts]
+        node: [12, 14, lts]
         os: [alpine]
 
     steps:
