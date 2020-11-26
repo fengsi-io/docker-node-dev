@@ -1,0 +1,10 @@
+ARG version=lts
+
+FROM node:${version}
+
+ENV NODE_ENV=development
+
+# install packages
+RUN apk add --no-cache fish git openssh python make g++ && \
+    npm config set unsafe-perm=true && \
+    npm i -g mirror-config-china --registry=https://registry.npm.taobao.org --silent > /dev/null 2>&1
