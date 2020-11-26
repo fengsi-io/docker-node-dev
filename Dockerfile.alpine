@@ -1,6 +1,6 @@
 ARG version=lts
 
-FROM node:${version}
+FROM node:${version}-alpine
 
 ENV NODE_ENV=development
 
