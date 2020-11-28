@@ -1,8 +1,6 @@
 ARG version=lts
 
-FROM node:${version}-alpine
-
-ENV NODE_ENV=development
+FROM node:${version}-alpine as nuxt
 
 # install packages
 RUN apk add --no-cache fish git openssh python make g++ && \
